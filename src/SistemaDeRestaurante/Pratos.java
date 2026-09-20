@@ -16,7 +16,7 @@ public class Pratos {
 
     void aplicarDesconto(double valor) {
         if (valor > 0) {
-            preco -= preco * valor;
+            preco -= preco * valor / 100;
         }
     }
 

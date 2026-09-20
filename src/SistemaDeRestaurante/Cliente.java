@@ -19,7 +19,9 @@ public class Cliente {
     }
 
     void exibirDados() {
-        System.out.println("");
+        System.out.println("Nome do cliente: " + nome);
+        System.out.println("Saldo: " + saldo);
+        System.out.println("Quantidade de pedidos: " + quantidadePedidos);
     }
 
 }
