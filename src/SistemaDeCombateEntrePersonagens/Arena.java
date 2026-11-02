@@ -19,12 +19,14 @@ public class Arena {
         if (!equipeB.temVivos()) {
             return false;
         }
-        if (turnoA && equipeA.temVivos() && equipeB.temVivos() && equipeA.contem(a)) {
+        if (turnoA && equipeA.temVivos() && equipeB.temVivos() && equipeA.contem(a) && !equipeA.contem(alvo)) {
             a.atacar(alvo);
+            turnoA = false;
             return true;
         }
-        if (!turnoA && equipeA.temVivos() && equipeB.temVivos() && equipeB.contem(alvo)) {
+        if (!turnoA && equipeA.temVivos() && equipeB.temVivos() && equipeB.contem(alvo) && !equipeB.contem(alvo)) {
             alvo.atacar(a);
+            turnoA = true;
             return true;
         }
         resultado();
@@ -44,4 +46,7 @@ public class Arena {
         return "EMPATE";
     }
 
+    public boolean isTurnoA() {
+        return turnoA;
+    }
 }
